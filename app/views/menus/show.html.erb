@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @menu.name %>
+</p>
+
+
+＝＝＝＝＝＝＝＝＝＝
+<div>
+<% @menu.foods.each do |food| %>
+  <div>
+     <%= food.name %>   //子モデルのデータを取り出す
+
+     <% food.materials.each do |material| %>
+
+       <%= material.name %>
+     <% end %>
+  </div>
+<% end %>
+</div>
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

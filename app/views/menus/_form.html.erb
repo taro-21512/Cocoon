@@ -1,0 +1,17 @@
+
+
+<%= form_with(model: menu, local: true)  do |f| %>
+
+  <div id="foods">
+      <%= f.fields_for :foods do |food| %>
+          <%= render 'food_fields',f: food %>
+      <% end %>
+
+     <div class="links">
+          <%= link_to_add_association "Add foods",f,:foods %>
+     </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
